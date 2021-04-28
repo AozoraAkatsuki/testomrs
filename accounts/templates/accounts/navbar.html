@@ -1,0 +1,26 @@
+{% load static %}
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+ <img src="{% static 'images/omrs.png' %}">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'home' %}">Dashboard</a>
+      </li>
+    </ul>
+  </div>
+    <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Hello, {{request.user}}
+    </button>
+    <ul class="dropdown-menu">
+      <li>&nbsp;                <a href="{% url 'edit_profile' %}">Edit Profile</a></li>
+      <li>&nbsp;        <a href="{% url 'change_password' %}">Change Password</a></li>
+    </ul>
+    </div>&nbsp;&nbsp;&nbsp;&nbsp;
+    <button class="btn btn-primary" onclick="window.location.href={% url 'logout' %}">Logout</button>
+
+</nav>
+
